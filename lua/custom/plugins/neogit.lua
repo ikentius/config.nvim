@@ -7,5 +7,10 @@ return {
     -- Only one of these is needed, not both.
     'nvim-telescope/telescope.nvim', -- optional
   },
-  config = true,
+  cmd = 'Neogit',
+  opts = {
+    integrations = {
+      diffview = true,
+    },
+  },
 }
