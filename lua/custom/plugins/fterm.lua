@@ -1,8 +1,5 @@
 return {
   'numToStr/FTerm.nvim',
-  keys = {
-    { '<leader>ft', '<<CMD>lua require("FTerm").toggle()<CR>', desc = '[T]erminal [F]loating' },
-  },
   config = function()
     require('FTerm').setup {
       blend = 5,
@@ -13,10 +10,15 @@ return {
         y = 0.5,
       },
     }
-    vim.keymap.set('n', '<leader>ft', '<CMD>lua require("FTerm").toggle()<CR>')
-    vim.keymap.set('t', '<leader>ft', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+    vim.keymap.set('n', '<A-t>', '<CMD>lua require("FTerm").toggle()<CR>')
+    vim.keymap.set('t', '<A-t>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
     vim.api.nvim_create_user_command('Tinker', function()
       require('FTerm').run 'php artisan tinker'
+    end, { bang = true })
+
+    vim.api.nvim_create_user_command('Serve', function()
+      require('FTerm').scratch { cmd = { 'php', 'artisan', 'serve' } }
     end, { bang = true })
   end,
 }

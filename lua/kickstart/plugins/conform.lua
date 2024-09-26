@@ -23,11 +23,17 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        php = { 'pint' },
+        php = { 'php-cs-fixer' },
       },
       formatters = {
-        pint = {
-          prepend_args = { '--preset', 'laravel' },
+        ['php-cs-fixer'] = {
+          command = 'php-cs-fixer',
+          args = {
+            'fix',
+            '--rules=@PSR12,@PHP82Migration,no_unused_imports', -- Formatting preset. Other presets are available, see the php-cs-fixer docs.
+            '$FILENAME',
+          },
+          stdin = false,
         },
       },
     },

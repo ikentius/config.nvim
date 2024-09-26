@@ -4,7 +4,10 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
     -- calling `setup` is optional for customization
-    require('fzf-lua').setup {}
+    require('fzf-lua').setup {
+      -- initial preset
+      { 'fzf-vim' },
+    }
 
     local fzflua = require 'fzf-lua'
     vim.keymap.set('n', '<leader>sf', fzflua.files, { desc = '[S]earch [F]iles' })
