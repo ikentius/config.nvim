@@ -33,13 +33,11 @@ return {
   {
     'akinsho/bufferline.nvim',
     version = '*',
-    dependencies = 'nvim-tree/nvim-web-devicons',
     config = true,
   },
 
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       options = {
         globalstatus = true,
@@ -67,6 +65,5 @@ return {
         },
       }
     end,
-    dependencies = { { 'nvim-tree/nvim-web-devicons' } },
   },
 }
