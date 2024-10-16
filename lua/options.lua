@@ -79,3 +79,5 @@ vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.opt.relativenumber = true
 
 -- vim: ts=2 sts=2 sw=2 et
+--
+-- put this in your main init.lua file ( before lazy setup )
